@@ -1,52 +1,37 @@
 "use client";
 
 import Image from "next/image";
-import Marquee from "react-fast-marquee";
-import {
-  LogIn,
-  MessageCircle,
-  Flame,
-  Star,
-  ChevronRight,
-} from "lucide-react";
-
+import { LogIn, MessageCircle, Star, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function LandingPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#1f2932] text-white">
+    <main className="relative min-h-screen overflow-x-hidden bg-[#1f2932] text-white">
 
-      {/* BACKGROUND EFFECTS */}
+      {/* BACKGROUND GLOW */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-
-        <div className="absolute top-[-150px] left-[-100px] h-[500px] w-[500px] rounded-full bg-[#3f5678] blur-[140px] opacity-30" />
-
-        <div className="absolute bottom-[-100px] right-[-100px] h-[450px] w-[450px] rounded-full bg-[#b392a3] blur-[140px] opacity-20" />
-
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_40%)]" />
+        <div className="absolute top-[-120px] left-[-120px] h-[400px] w-[400px] rounded-full bg-[#3f5678] blur-[140px] opacity-30" />
+        <div className="absolute bottom-[-120px] right-[-120px] h-[400px] w-[400px] rounded-full bg-[#b392a3] blur-[140px] opacity-20" />
       </div>
 
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
-
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10">
 
           {/* LEFT */}
-          <div className="flex items-center gap-4">
-
+          <div className="flex items-center gap-3">
             <Image
               src="/images/logo.png"
               alt="logo"
-              width={60}
-              height={60}
-              className="rounded-full border-2 border-[#b392a3]"
+              width={55}
+              height={55}
+              className="rounded-full border border-[#b392a3]"
             />
 
             <div>
-              <h1 className="text-2xl font-black tracking-wide md:text-3xl">
+              <h1 className="text-2xl font-black md:text-3xl">
                 eKhayaToons
               </h1>
-
               <p className="text-xs text-[#b392a3]">
                 Mzansi is Home
               </p>
@@ -54,184 +39,131 @@ export default function LandingPage() {
           </div>
 
           {/* RIGHT */}
-          <button className="flex items-center gap-2 rounded-full bg-[#3f5678] px-5 py-3 font-semibold shadow-lg shadow-[#3f5678]/50 transition hover:scale-105">
-
+          <button className="flex items-center gap-2 rounded-full bg-[#3f5678] px-5 py-3 font-semibold shadow-lg transition hover:scale-105">
             <LogIn size={18} />
-
-            <span className="hidden sm:block">
-              Sign In
-            </span>
+            <span className="hidden sm:block">Sign In</span>
           </button>
         </div>
       </nav>
 
-      {/* HERO SECTION */}
-      <section className="mx-auto grid max-w-7xl gap-16 px-6 py-20 md:px-10 lg:grid-cols-2 lg:items-center lg:py-28">
+      {/* HERO */}
+      <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 md:px-10 lg:grid-cols-2 lg:py-24">
 
-        {/* LEFT CONTENT */}
+        {/* TEXT */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
         >
-
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#3f5678] bg-[#3f5678]/20 px-5 py-2">
-
-            <Flame className="text-orange-400" size={18} />
-
-            <span className="text-sm font-medium">
-              Africa’s Digital Comic Universe
-            </span>
-          </div>
-
-          <h1 className="text-5xl font-black leading-tight sm:text-6xl lg:text-8xl">
-
-            Stories
-            <br />
-
-            From The
-            <br />
-
-            <span className="text-[#b392a3]">
-              Homeland.
-            </span>
+          <h1 className="text-5xl font-black leading-tight sm:text-6xl lg:text-7xl">
+            Welcome to{" "}
+            <span className="text-[#b392a3]">eKhayaToons</span>
           </h1>
 
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-gray-300 md:text-2xl">
-
-            Welcome to eKhayaToons.
-            Discover, read, and create African digital comics inspired by mythology,
-            superheroes, anime, romance, fantasy, and South African storytelling.
-
+          <p className="mt-6 text-lg text-gray-300 md:text-xl">
+            Discover, Read, and Create African Digital Comics.
+            Stories born from the homeland — for a global audience.
           </p>
 
-          {/* CTA BUTTONS */}
-          <div className="mt-10 flex flex-col gap-5 sm:flex-row">
-
-            <button className="rounded-2xl bg-[#3f5678] px-8 py-5 text-lg font-bold shadow-xl shadow-[#3f5678]/40 transition hover:scale-105">
-
+          {/* BUTTONS */}
+          <div className="mt-8 flex flex-col gap-4 sm:w-[300px]">
+            <button className="rounded-2xl bg-[#3f5678] py-4 text-lg font-bold transition hover:scale-105">
               Start Reading
-
             </button>
 
-            <button className="rounded-2xl border-2 border-[#b392a3] px-8 py-5 text-lg font-bold text-[#b392a3] transition hover:bg-[#b392a3] hover:text-black">
-
-              Become A Creator
-
+            <button className="rounded-2xl border border-[#b392a3] py-4 text-lg font-bold text-[#b392a3] transition hover:bg-[#b392a3] hover:text-black">
+              Become a Creator
             </button>
           </div>
         </motion.div>
 
         {/* HERO IMAGE */}
         <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-          }}
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 4, repeat: Infinity }}
           className="relative"
         >
-
           <div className="absolute inset-0 rounded-[40px] bg-[#3f5678] blur-[120px] opacity-30" />
 
           <img
-            src="https://images.unsplash.com/photo-1612036782180-6f0822045d26?q=80&w=1200&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=1200&auto=format&fit=crop"
             alt="hero"
             className="relative rounded-[40px] border border-white/10 shadow-2xl"
           />
         </motion.div>
       </section>
 
-      {/* TRENDING MARQUEE */}
-      <section className="py-8">
+      {/* TRENDING */}
+      <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
 
-        <Marquee speed={50} gradient={false}>
+        <div className="mb-10 flex items-center justify-between">
+          <h2 className="text-3xl font-black md:text-5xl">
+            Trending Comics
+          </h2>
 
-          {[
-            "Shadow Warrior",
-            "The Last Sangoma",
-            "Cyber Kasi",
-            "Zulu Force",
-            "Ink Of Destiny",
-            "Spirit Hunters",
-          ].map((comic, index) => (
-
-            <div
-              key={index}
-              className="mx-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-[#484b50]/70 px-8 py-4 backdrop-blur-xl"
-            >
-
-              <Flame className="text-orange-400" />
-
-              <span className="font-bold">
-                {comic}
-              </span>
-            </div>
-          ))}
-        </Marquee>
-      </section>
-
-      {/* TRENDING SECTION */}
-      <section className="mx-auto max-w-7xl px-6 py-20 md:px-10">
-
-        <div className="mb-12 flex items-center justify-between">
-
-          <div>
-
-            <h2 className="text-4xl font-black md:text-5xl">
-              Trending This Week
-            </h2>
-
-            <p className="mt-3 text-gray-400">
-              Comics readers can’t stop reading right now.
-            </p>
-          </div>
-
-          <button className="hidden items-center gap-2 text-[#b392a3] md:flex">
-
-            View All
-
-            <ChevronRight size={18} />
+          <button className="hidden items-center gap-1 text-[#b392a3] md:flex">
+            View All <ChevronRight size={18} />
           </button>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-          {[1, 2, 3, 4].map((comic) => (
-
+          {[
+            {
+              title: "Shadow Warrior",
+              creator: "Neo Mokoena",
+              genre: "Action",
+              rating: "4.9",
+              image: "https://images.unsplash.com/photo-1608889175123-8ee362201f81?q=80&w=1200&auto=format&fit=crop"
+            },
+            {
+              title: "Cyber Kasi",
+              creator: "Amahle Dube",
+              genre: "Sci-Fi",
+              rating: "4.8",
+              image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+            },
+            {
+              title: "The Last Sangoma",
+              creator: "Lebo Sithole",
+              genre: "Fantasy",
+              rating: "5.0",
+              image: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?q=80&w=1200&auto=format&fit=crop"
+            },
+            {
+              title: "Zulu Force",
+              creator: "Thando Nxumalo",
+              genre: "Superhero",
+              rating: "4.7",
+              image: "https://images.unsplash.com/photo-1520975922284-9c4f2a7c8e0b?q=80&w=1200&auto=format&fit=crop"
+            },
+          ].map((comic, i) => (
             <div
-              key={comic}
-              className="group overflow-hidden rounded-[30px] border border-white/10 bg-[#484b50]/50 backdrop-blur-xl transition duration-500 hover:scale-105"
+              key={i}
+              className="group overflow-hidden rounded-[28px] border border-white/10 bg-[#484b50]/40 transition hover:scale-105"
             >
+              <img
+                src={comic.image}
+                alt={comic.title}
+                className="h-[320px] w-full object-cover transition group-hover:scale-110"
+              />
 
-              <div className="overflow-hidden">
-
-                <img
-                  src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=1200&auto=format&fit=crop"
-                  alt="comic"
-                  className="h-[350px] w-full object-cover transition duration-700 group-hover:scale-110"
-                />
-              </div>
-
-              <div className="p-6">
-
-                <div className="mb-3 inline-flex rounded-full bg-[#3f5678]/30 px-3 py-1 text-sm">
-                  Action
+              <div className="p-5">
+                <div className="mb-2 inline-block rounded-full bg-[#3f5678]/40 px-3 py-1 text-xs">
+                  {comic.genre}
                 </div>
 
-                <h3 className="text-2xl font-bold">
-                  Shadow Warrior
+                <h3 className="text-xl font-black">
+                  {comic.title}
                 </h3>
 
-                <p className="mt-2 text-gray-300">
-                  by Neo Mokoena
+                <p className="text-sm text-gray-300">
+                  by {comic.creator}
                 </p>
 
-                <div className="mt-4 flex items-center gap-2 text-yellow-400">
-
-                  <Star fill="yellow" size={18} />
-
-                  <span>4.9</span>
+                <div className="mt-3 flex items-center gap-2 text-yellow-400">
+                  <Star size={16} fill="yellow" />
+                  <span>{comic.rating}</span>
                 </div>
               </div>
             </div>
@@ -240,13 +172,13 @@ export default function LandingPage() {
       </section>
 
       {/* GENRES */}
-      <section className="mx-auto max-w-7xl px-6 py-20 md:px-10">
+      <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
 
-        <h2 className="mb-12 text-4xl font-black md:text-5xl">
-          Popular Genres
+        <h2 className="mb-8 text-3xl font-black md:text-5xl">
+          Genres
         </h2>
 
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
 
           {[
             "Action",
@@ -255,149 +187,47 @@ export default function LandingPage() {
             "Horror",
             "Comedy",
             "Sci-Fi",
-            "SA Mythology",
+            "Mythology",
             "Superheroes",
-          ].map((genre) => (
-
+          ].map((g) => (
             <div
-              key={genre}
-              className="rounded-[30px] bg-gradient-to-br from-[#484b50] to-[#3f5678] p-10 text-center transition hover:scale-105 hover:shadow-2xl hover:shadow-[#3f5678]/30"
+              key={g}
+              className="rounded-2xl bg-gradient-to-br from-[#484b50] to-[#3f5678] p-6 text-center font-bold transition hover:scale-105"
             >
-
-              <h3 className="text-2xl font-bold">
-                {genre}
-              </h3>
+              {g}
             </div>
           ))}
         </div>
       </section>
 
-      {/* WHY EKHAYATOONS */}
-      <section className="mx-auto max-w-7xl px-6 py-24 text-center md:px-10">
-
-        <h2 className="text-4xl font-black md:text-6xl">
-
-          Why eKhayaToons?
-
-        </h2>
-
-        <p className="mx-auto mt-8 max-w-4xl text-xl leading-relaxed text-gray-300">
-
-          eKhayaToons is building the future of African storytelling through
-          immersive digital comics, creators, and readers from across the continent.
-          Discover heroes inspired by African culture, mythology, fantasy, anime,
-          and modern township stories.
-
-        </p>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="mx-auto max-w-7xl px-6 py-20 md:px-10">
-
-        <h2 className="mb-12 text-4xl font-black md:text-5xl">
-          Community Reviews
-        </h2>
-
-        <div className="grid gap-8 md:grid-cols-3">
-
-          {[
-            "This feels like the Netflix of African comics.",
-            "Finally a platform focused on African creators.",
-            "Beautiful UI and incredible storytelling.",
-          ].map((review, index) => (
-
-            <div
-              key={index}
-              className="rounded-[30px] border border-white/10 bg-[#484b50]/40 p-8 backdrop-blur-xl"
-            >
-
-              <p className="text-lg leading-relaxed text-gray-300">
-
-                "{review}"
-
-              </p>
-
-              <div className="mt-6 flex text-yellow-400">
-                ⭐⭐⭐⭐⭐
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA SECTION */}
-      <section className="mx-auto max-w-7xl px-6 py-20 md:px-10">
-
-        <div className="rounded-[40px] bg-gradient-to-r from-[#3f5678] to-[#b392a3] p-12 text-center shadow-2xl">
-
-          <h2 className="text-4xl font-black md:text-5xl">
-
-            Start Your Comic Journey Today
-
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/90">
-
-            Join readers and creators shaping the next generation
-            of African digital storytelling.
-
-          </p>
-
-          <div className="mt-10 flex flex-col justify-center gap-5 sm:flex-row">
-
-            <button className="rounded-2xl bg-white px-8 py-5 font-bold text-black transition hover:scale-105">
-
-              Create Account
-
-            </button>
-
-            <button className="rounded-2xl border border-white px-8 py-5 font-bold transition hover:bg-white hover:text-black">
-
-              Browse Comics
-
-            </button>
-          </div>
-        </div>
-      </section>
+      {/* FLOATING CHATBOT */}
+      <button className="fixed bottom-6 right-6 rounded-full bg-gradient-to-r from-[#3f5678] to-[#b392a3] p-5 shadow-2xl transition hover:scale-110">
+        <MessageCircle size={30} />
+      </button>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 px-6 py-16 text-center md:px-10">
+      <footer className="mt-16 border-t border-white/10 px-6 py-10 text-center md:px-10">
 
         <Image
           src="/images/logo.png"
           alt="logo"
-          width={100}
-          height={100}
+          width={80}
+          height={80}
           className="mx-auto rounded-full"
         />
 
-        <h3 className="mt-6 text-4xl font-black">
+        <h3 className="mt-4 text-3xl font-black">
           eKhayaToons
         </h3>
 
-        <p className="mt-4 text-gray-400">
+        <p className="mt-2 text-gray-400">
           Mzansi is Home
         </p>
 
-        <p className="mx-auto mt-6 max-w-2xl text-gray-500">
-          Empowering African creators through digital storytelling,
-          comics, fantasy, anime-inspired adventures, and mythology.
-        </p>
-
-        <p className="mt-8 text-gray-600">
+        <p className="mt-6 text-xs text-gray-500">
           © 2026 eKhayaToons. All Rights Reserved.
         </p>
       </footer>
-
-      {/* FLOATING CHATBOT */}
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        className="fixed bottom-6 right-6 z-50 rounded-full bg-gradient-to-r from-[#3f5678] to-[#b392a3] p-5 shadow-2xl"
-      >
-
-        <MessageCircle size={32} />
-
-      </motion.button>
     </main>
   );
 }
